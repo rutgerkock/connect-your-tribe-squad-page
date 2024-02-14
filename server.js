@@ -68,10 +68,10 @@ app.listen(app.get('port'), function () {
 //   })
 // })
 
-// app.get('/squad', function (request, response) {
+app.get('/squad/:id', function (request, response) {
  
-//   fetchJson('https://fdnd.directus.app/items/person/').then((apiData) => {
-//     response.render('squad', {persons: apiData.data})
-//   })
+  fetchJson('https://fdnd.directus.app/items/person/').then((apiData) => {
+    response.render('squad', {persons: apiData.data})
+  })
 
-// })
+})
