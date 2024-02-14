@@ -3,11 +3,11 @@
 <ul>
   <% squads.forEach(squad => { %>
       <li>
-      <a href="/squad/<%= squad.id%>">
+      <a href="items/person/?filter{%22squad_id%22:<%= squad.id%>">
           <h2><%= squad.name %> </h2>
       </a>
       </li>
   <% }) %>
-</ul>
+  </ul>
 
 <%- include('./partials/foot') %>
