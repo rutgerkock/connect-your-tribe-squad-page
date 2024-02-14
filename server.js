@@ -59,19 +59,12 @@ app.listen(app.get('port'), function () {
   console.log(`Application started on http://localhost:${app.get('port')}`)
 })
 
-// // Maak een GET route voor een detailpagina met een request parameter id
-// app.get('/squad/:id', function (request, response) {
-//   // Gebruik de request parameter id en haal de juiste squad uit de WHOIS API op
-//   fetchJson(apiUrl + '/squad/' + request.params.id).then((apiData) => {
-//     // Render squad.ejs uit de views map en geef de opgehaalde data mee als variable, genaamd squad
-//     response.render('squad', {squad: apiData.data, person: personData.data, squads: squadData.data})
-//   })
-// })
 
-app.get('/squad/:id', function (request, response) {
- 
-  fetchJson('https://fdnd.directus.app/items/person/').then((apiData) => {
-    response.render('squad', {persons: apiData.data})
+// Maak een GET route voor een detailpagina met een request parameter id
+app.get('/squad', function (request, response) {
+  // Gebruik de request parameter id en haal de juiste squad uit de WHOIS API op
+  fetchJson(apiUrl + '/person/?filter={"squad_id":3}' + request.params.id).then((apiData) => {
+    // Render squad.ejs uit de views map en geef de opgehaalde data mee als variable, genaamd squad
+    response.render('squad', {squad: apiData.data, person: personData.data, squads: squadData.data})
   })
-
 })

@@ -1,7 +1,11 @@
 <%- include('./partials/head') %>
-
+<header>
+  <a href="/">Back</a>
+</header>
+ 
+<main>
   <ul>
-    <% persons.forEach(person => { %>
+    <% person.forEach(person => { %>
       <li>
         <a href="https://<%= person.website %>">
           <h2><%= person.name %> <%= person.prefix %> <%= person.surname %> </h2>
@@ -9,3 +13,6 @@
       </li>
     <% }) %>
   </ul>
+</main>
+ 
+<%- include('./partials/foot') %>
