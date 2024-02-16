@@ -25,12 +25,8 @@ app.use(express.static('public'))
 
 
 app.get('/', function (request, response) {
-  let sortBy = ''
-  if (request.param('filter')) {
-    sortBy = `/?filter=${request.param('filter')}`
-  }
   // Haal alle personen uit de WHOIS API op
-  fetchJson(apiUrl + '/person' + sortBy).then((apiData) => {
+  fetchJson(apiUrl + '/person').then((apiData) => {
     // apiData bevat gegevens van alle personen uit alle squads
     // Je zou dat hier kunnen filteren, sorteren, of zelfs aanpassen, voordat je het doorgeeft aan de view
 
@@ -38,6 +34,31 @@ app.get('/', function (request, response) {
     response.render('index', { persons: apiData.data, squads: squadData.data, person: personData.data})
   })
 })
+
+app.get('/squad/:id', async function (request, response) {
+  try {
+    const squadId = request.params.id;
+    const sort = request.query.sort; // Get the sort query parameter
+
+    // Fetch squad data based on the squad ID
+    const squadData = await fetchJson(apiUrl + '/squad/' + squadId);
+
+    // Fetch person data filtered by squad ID and the provided filter criteria
+    let personDataUrl = apiUrl + '/person?filter={"squad_id":' + squadId + '}';
+    if (sort) {
+      personDataUrl += `&sort=${sort}`;
+    }
+
+    // Fetch person data with applied filtering and sorting
+    const personData = await fetchJson(personDataUrl);
+
+    // Render the squad.ejs template with squad and person data
+    response.render('squad', { persons: personData.data, squad: squadData.data });
+  } catch (error) {
+    console.error('Error:', error);
+    response.status(500).send('Internal Server Error');
+  }
+});
 
 
 // Maak een POST route voor de index
