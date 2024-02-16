@@ -26,8 +26,8 @@ app.use(express.static('public'))
 
 app.get('/', function (request, response) {
   let sortBy = ''
-  if (request.param('sort')) {
-    sortBy = `/?sort=${request.param('sort')}`
+  if (request.param('filter')) {
+    sortBy = `/?filter=${request.param('filter')}`
   }
   // Haal alle personen uit de WHOIS API op
   fetchJson(apiUrl + '/person' + sortBy).then((apiData) => {
@@ -38,6 +38,7 @@ app.get('/', function (request, response) {
     response.render('index', { persons: apiData.data, squads: squadData.data, person: personData.data})
   })
 })
+
 
 // Maak een POST route voor de index
 app.post('/', function (request, response) {
