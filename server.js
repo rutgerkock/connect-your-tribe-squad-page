@@ -38,21 +38,17 @@ app.get('/', function (request, response) {
 app.get('/squad/:id', async function (request, response) {
   try {
     const squadId = request.params.id;
-    const sort = request.query.sort; // Get the sort query parameter
+    const sort = request.query.sort;
 
-    // Fetch squad data based on the squad ID
     const squadData = await fetchJson(apiUrl + '/squad/' + squadId);
 
-    // Fetch person data filtered by squad ID and the provided filter criteria
     let personDataUrl = apiUrl + '/person?filter={"squad_id":' + squadId + '}';
     if (sort) {
       personDataUrl += `&sort=${sort}`;
     }
 
-    // Fetch person data with applied filtering and sorting
     const personData = await fetchJson(personDataUrl);
 
-    // Render the squad.ejs template with squad and person data
     response.render('squad', { persons: personData.data, squad: squadData.data });
   } catch (error) {
     console.error('Error:', error);
