@@ -8,7 +8,7 @@
     <% person.forEach(person => { %>
       <li>
         <a href="https://<%= person.website %>">
-          <h2><%= person.name %> <%= person.prefix %> <%= person.surname %> </h2>
+          <h2><%= person.name %> <%= person.prefix %> <%= person.surname %> ------ <%= person.squad_id%> </h2>
         </a>
       </li>
     <% }) %>

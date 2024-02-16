@@ -1,13 +1,18 @@
 <%- include('./partials/head') %>
 
-<ul>
-  <% squads.forEach(squad => { %>
-      <li>
-      <a href="/squad/<%= squad.id%>">
-          <h2><%= squad.name %> </h2>
-      </a>
+  <h2>Students</h2>
+  <a id="-button" href="/?sort=name">filter</a>
+  <ul>
+
+    <% persons.forEach(person=> { %>
+      <li class="cloud"><a href="./person/<%= person.id %>">
+          <%= person.name %>
+            <%= person.prefix %>
+              <%= person.surname %>
+                <a href="./person/<%= person.id %>"<%= person.github_handle %>>
+        </a>
       </li>
-  <% }) %>
+      <% }) %>
   </ul>
 
-<%- include('./partials/foot') %>
+  <%- include('./partials/foot') %>
