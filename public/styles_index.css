@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'futura-pt', sans-serif;
+    background-color: #333333;
+    color: #ffffff;
+}
+
+a {
+    color: #333333;
+    text-decoration: none;
+    background-color: #ffffff;
+    display: flex;
+    width: 15vw;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    font-weight: 600;
+}
+
+a:nth-of-type(1) {
+    scale: 2.8;
+    margin-top: 10vh;
+    margin-left: 20vw;
+}
+
+a:nth-of-type(2) {
+    scale: 4.4;
+    margin-top: 18.5vh;
+    margin-left: 56vw;
+}
+
+a:nth-of-type(3) {
+    scale: 3.8;
+    margin-top: 26.5vh;
+    margin-left: 24vw;
+}

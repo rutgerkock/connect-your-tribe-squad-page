@@ -13,3 +13,8 @@ body {
 a {
     color: #ffffff;
 }
+
+img {
+    max-width: 100px;
+    height: auto;
+}

@@ -1,23 +1,29 @@
 <%- include('./partials/head') %>
+<link rel="stylesheet" href="/styles.css">
 
 <a href="/">Back</a>
 
 <details name="footer_list">
-  <summary>Diensten</summary>
+  <summary>Sort</summary>
   <a href="/squad/<%= squad.id %>/?sort=name">Naam (A - Z)</a>
   <a href="/squad/<%= squad.id %>/?sort=-name">Naam (Z - A)</a>
 </details>
  
 <main>
   <ul>
-      <% persons.forEach(person => { %>
-        <li>
-            <p> <%= person.name %> </p>
-          </a>
-        </li>
-      <% }) %>
+    <% persons.forEach(person => { %>
+      <li>
+        <div>
+          <% if (person.avatar.startsWith('http')) { %>
+            <img src="<%= person.avatar %>">
+          <% } else { %>
+            <h1><%= person.avatar %></h1>
+          <% } %>
+          <p> <%= person.name + " " + person.surname %> </p>
+        </div>
+      </li>
+    <% }) %>
   </ul>
 </main>
 
- 
 <%- include('./partials/foot') %>
