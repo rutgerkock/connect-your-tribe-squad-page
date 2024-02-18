@@ -8,6 +8,7 @@ body {
     font-family: 'futura-book', sans-serif;
     background-color: #333333;
     color: #ffffff;
+    padding: 4rem
 }
 
 a {
@@ -17,4 +18,24 @@ a {
 img {
     max-width: 100px;
     height: auto;
+}
+
+details {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    background-color: #ffffff;
+    color: #333333;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    width: 10rem;
+}
+details > summary {
+    cursor: pointer;
+}
+
+details a {
+    color: #333333;
+    display: flex;
+    flex-direction: row;
 }
