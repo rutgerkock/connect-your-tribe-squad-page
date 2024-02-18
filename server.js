@@ -72,6 +72,33 @@ app.get('/person/:id', function (request, response) {
   })
 })
 
+
+app.get('/search', function (request, response) {
+  const searchData = request.query.search.toLowerCase();
+  fetchJson(apiUrl + '/person').then((apiData) => {
+    const filteredPersons = apiData.data.filter(person => {
+      return person.name.toLowerCase().includes(searchData) || person.surname.toLowerCase().includes(searchData);
+    });
+
+    if (searchData === '') {
+      return response.send(`<script>alert("Je kan niet zoeken naar niks!"); window.location.href = "/";</script>`);
+    } else if (filteredPersons.length === 0) {
+      return response.send(`<script>alert("Er zit niemand met '${searchData}' in de naam in squad D, E of F."); window.location.href = "/";</script>`);
+    } else {
+      response.render('search', { 
+        person: apiData.data,
+        persons: filteredPersons, 
+        search: searchData
+      });
+    }
+  }).catch(error => {
+    console.error('Error:', error);
+    response.status(500).send('Internal Server Error');
+  });
+});
+
+
+
 // Stel het poortnummer in waar express op moet gaan luisteren
 app.set('port', process.env.PORT || 8000)
 

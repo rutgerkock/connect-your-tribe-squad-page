@@ -1,0 +1,22 @@
+<%- include('./partials/head') %>
+
+<link rel="stylesheet" href="/styles.css">
+<a href="/">Back</a>
+
+<main>
+  <p> <%= "Zoekresulaten voor \'" + search + "\':" %> </p>
+  <ul>
+      <% persons.forEach(person => { %>
+        <li>
+          <p>
+            <%= person.name + " " + person.surname %>
+          </p>
+          <p>
+            <%= person.github_handle %>
+          </p>
+          <br>
+          <br>
+        </li>
+      <% }) %>
+    </ul>
+  </main>

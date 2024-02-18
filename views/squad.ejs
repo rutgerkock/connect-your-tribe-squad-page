@@ -3,8 +3,8 @@
 
 <a href="/">Back</a>
 
-<details name="footer_list">
-  <summary>Sort</summary>
+<details>
+  <summary>Sorteer</summary>
   <a href="/squad/<%= squad.id %>/?sort=name">Naam (A - Z)</a>
   <a href="/squad/<%= squad.id %>/?sort=-name">Naam (Z - A)</a>
 </details>
@@ -13,14 +13,7 @@
   <ul>
     <% persons.forEach(person => { %>
       <li>
-        <div>
-          <% if (person.avatar.startsWith('http')) { %>
-            <img src="<%= person.avatar %>">
-          <% } else { %>
-            <h1><%= person.avatar %></h1>
-          <% } %>
-          <p> <%= person.name + " " + person.surname %> </p>
-        </div>
+        <p> <%= person.name + " " + person.surname + " " + squad.name %> </p>
       </li>
     <% }) %>
   </ul>
