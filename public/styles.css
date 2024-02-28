@@ -39,3 +39,48 @@ details a {
     display: flex;
     flex-direction: row;
 }
+
+ul  {
+    list-style-type: none;
+    line-height: 2;
+    z-index: 1;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+li { 
+width: 350px;
+height: 350px;
+position: relative;
+display: flex;
+align-items: center;
+justify-content: center;
+flex-wrap: nowrap;
+flex-direction: row;
+box-shadow: inset 20px 20px 20px rgba(0,0,0,0.05),
+            25px 35px 20px rgba(0,0,0,0.05),
+            25px 20px 20px rgba(0,0,0,0.05),
+            inset 25px 30px 30px hsl(212, 100%, 71%);;
+animation: slide 3s linear;
+}
+
+@keyframes slide{
+0%{
+    opacity: 0;
+}
+100%{
+    opacity: 1;
+}
+}
+
+li:nth-child(odd) {
+    border-radius: 67% 33% 28% 72% / 59% 52% 48% 41% ;
+    margin: 20px 30px 30px 0;
+}
+
+li:nth-child(even) {
+    border-radius: 15% 85% 53% 47% / 55% 41% 59% 45%  ;
+}
+
+  
