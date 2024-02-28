@@ -107,3 +107,56 @@ app.listen(app.get('port'), function () {
   // Toon een bericht in de console en geef het poortnummer door
   console.log(`Application started on http://localhost:${app.get('port')}`)
 })
+
+
+
+
+
+// app.get('/detail/:id', function (request, response) {
+//   // Haal alle personen uit de WHOIS API op
+//   fetchJson(apiUrl + 'person/' + request.params.id).then((apiData) => {
+//     try {
+//       apiData.data.custom = JSON.parse(apiData.data.custom);
+//     }
+//     catch (error) {
+//       apiData.data.custom = {};
+//     }
+//     response.render('detail', { person: apiData.data, squads: squadData.data })
+//   })
+// })
+
+// app.post('/detail/:id', function (request, response) {
+
+//   fetchJson(apiUrl + 'person/' + request.params.id.then((apiResponse) => {
+//     if (request.body.actie == 'verstuur') {
+      
+//       if (!apiResponse.data.custom.messages) {
+//         apiResponse.data.custom.messages = [];
+//       }
+//       apiResponse.data.custom.messages.push(request.body.message);
+      
+//     } else if (request.body.actie == 'vind-ik-leuk') {
+//         apiResponse.data.custom.like = true;
+//       }
+//       else if (request.body.actie == 'vind-ik-niet-leuk') {
+//         apiResponse.data.custom.like = false;
+//       }
+      
+
+
+//     fetch(apiUrl + 'person/' + request.params.id, {
+//       method: 'PATCH',
+//       body: JSON.stringify({
+//         custom: apiResponse.data.custom,
+//       }),
+//       headers: {
+//         'Content-Type': 'application/json; charset=utf-8',
+//       },
+//     }).then((patchResponse) => {
+//       console.log(patchResponse);
+//       response.redirect(303, '/detail/' + request.params.id)
+//     })
+
+
+// // form data in een object zetten:
+// // form method="post" action="/detail/<%= person.custom.message %>">
