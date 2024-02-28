@@ -74,7 +74,7 @@ app.get('/person/:id', function (request, response) {
 
 
 app.get('/search', function (request, response) {
-  const searchData = request.query.search.toLowerCase();
+  const searchData = request.query.search.toLowerCase().trim();
   fetchJson(apiUrl + '/person').then((apiData) => {
     const filteredPersons = apiData.data.filter(person => {
       return person.name.toLowerCase().includes(searchData) || person.surname.toLowerCase().includes(searchData);
