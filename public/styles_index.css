@@ -10,6 +10,14 @@ body {
     color: #ffffff;
 }
 
+@media (prefers-color-scheme: light) {
+    body {
+        background-color: #ffffff;
+        color: #333333;
+    }
+
+  }
+
 .button_container {
     display: grid;
     grid-template-columns: repeat(10, 1fr);
