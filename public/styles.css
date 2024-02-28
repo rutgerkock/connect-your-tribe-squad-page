@@ -33,6 +33,7 @@ body {
     background-color: #ffffff;
     color: #333333;
   }
+
   details {
     background-color: #333333;
     color: #ffffff;
@@ -50,6 +51,43 @@ body {
   .bubble {
     background: hsl(155, 68%, 13%);
   }
+
+  #nav_container_back {
+    background-color: #5f5f5f;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  body {
+    background-color: #ffffff;
+    color: #333333;
+  }
+
+  details {
+    background-color: #5f5f5f;
+    color: #ffffff;
+  }
+
+  details a {
+    color: #ffffff;
+  }
+
+  li:nth-child(3n + 1) {
+    background: hsl(25, 100%, 65%);
+    color: rgb(254, 237, 212);
+  }
+
+  li:nth-child(3n + 2) {
+    background: hsl(33, 100%, 51%);
+  }
+
+  li:nth-child(3n + 3) {
+    background: hsl(28, 100%, 81%);
+  }
+
+  li::before {
+    background: hsl(28, 100%, 50%);
+  }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -57,16 +95,26 @@ body {
     background-color: #ffffff;
     color: #333333;
   }
+
   details a {
     color: #333333;
   }
-  #nav_container_back {
-    background-color: #ffffff;
-    color: #333333;
+
+  li:nth-child(3n + 1) {
+    background: hsl(212, 100%, 71%);
+    color: black;
   }
 
-  .bubble {
-    background: hsl(0, 100%, 43%);
+  li:nth-child(3n + 2) {
+    background: hsl(212, 100%, 51%);
+  }
+
+  li:nth-child(3n + 3) {
+    background: hsl(212, 100%, 81%);
+  }
+
+  li::before {
+    background: hsl(212, 100%, 31%);
   }
 }
 
@@ -86,7 +134,8 @@ details {
   border-radius: 0.25rem;
   width: 10rem;
 }
-details > summary {
+
+details>summary {
   cursor: pointer;
 }
 
@@ -116,7 +165,7 @@ details a {
 li {
   width: 40vmin;
   height: 40vmin;
-  background: hsl(212, 100%, 51%);
+
   border: (50vmin * 0.09) solid hsl(212, 100%, 81%);
   overflow: visible;
   border-radius: 48% 40% 62% 47%;
@@ -134,20 +183,8 @@ li:before {
   margin: 2em;
   width: calc(100% - (40vmin * 0.3));
   height: calc(100% - (40vmin * 0.3));
-  background: hsl(212, 100%, 51%);
+
   border: (40vmin * 0.065) solid hsl(212, 100%, 61%);
   border-radius: 41% 40% 50% 55%;
   z-index: -2;
-}
-
-li:nth-child(3n + 1) {
-    background:hsl(212, 100%, 31%);
-}
-
-li:nth-child(3n + 2) {
-    background: hsl(155, 68%, 13%);
-}
-
-li:nth-child(3n + 3) {
-    background: hsl(0, 100%, 43%);
 }
