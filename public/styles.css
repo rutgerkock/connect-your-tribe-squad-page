@@ -5,11 +5,75 @@
 }
 
 body {
-    font-family: 'futura-book', sans-serif;
+    font-family: 'futura-pt', sans-serif;
     background-color: #333333;
     color: #ffffff;
-    padding: 4rem
+    padding: 4rem 1rem;
 }
+
+#nav_container {
+    position: fixed;
+    left: 1rem;
+    top: 1rem;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+#nav_container_back {
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    width: 10rem;
+    height: 2rem;
+    text-decoration: none;
+}
+
+
+@media (prefers-color-scheme: light) {
+    body {
+        background-color: #ffffff;
+        color: #333333;
+    }
+    details {
+        background-color: #333333;
+        color: #ffffff;
+    }
+    
+    #nav_container details a {
+        color: #ffffff;
+    }
+    
+    #nav_container_back {
+        background-color: #333333;
+        color: #ffffff;   
+    }
+
+    .bubble {
+        background: hsl(155, 68%, 13%);
+    }
+
+}
+
+@media (prefers-color-scheme: dark) {
+    details {
+        background-color: #ffffff;
+        color: #333333;
+    }
+    details a {
+        color: #333333;
+    }
+    #nav_container_back {
+        background-color: #ffffff;
+        color: #333333;   
+    }
+
+    .bubble {
+        background: hsl(0, 100%, 43%);
+    }
+
+    
+}
+
 
 a {
     color: #ffffff;
@@ -21,11 +85,8 @@ img {
 }
 
 details {
-    position: fixed;
     top: 1rem;
     left: 1rem;
-    background-color: #ffffff;
-    color: #333333;
     padding: 0.25rem 0.5rem;
     border-radius: 0.25rem;
     width: 10rem;
@@ -35,7 +96,6 @@ details > summary {
 }
 
 details a {
-    color: #333333;
     display: flex;
     flex-direction: row;
 }
@@ -66,7 +126,7 @@ li {
     border-radius: 48% 40% 62% 47% / 61% 49% 64% 43%;
     z-index: 1;
     scale: 1;
-    margin: 3em;
+    margin: 1em;
     align-items: center;
 }
 
@@ -82,24 +142,4 @@ li:before {
     border: (40vmin * .065) solid hsl(212, 100%, 61%);
     border-radius: 41% 40% 50% 55% / 49% 52% 51% 43%;
     z-index: -2;
-}
-
-
-@media (prefers-color-scheme-light) {
-    body {
-        background-color: #ffffff;
-        color: #333333;
-    }
-
-    .bubble {
-        background: hsl(155, 68%, 13%);
-    }
-
-}
-
-@media (prefers-color-scheme-dark) {
-    .bubble {
-        background: hsl(0, 100%, 43%);
-    }
-
 }

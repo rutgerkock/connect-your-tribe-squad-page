@@ -15,13 +15,28 @@ body {
         background-color: #ffffff;
         color: #333333;
     }
-
+    details {
+        background-color: #333333;
+        color: #ffffff;
+    }
+    
+    details a {
+        color: #ffffff;
+    }
     .bubble {
         background: hsl(155, 68%, 13%);
     }
+
 }
 
 @media (prefers-color-scheme: dark) {
+    details {
+        background-color: #ffffff;
+        color: #333333;
+    }
+    details a {
+        color: #333333;
+    }
 
     .bubble {
         background: hsl(0, 100%, 43%);
@@ -51,9 +66,7 @@ div>a:nth-of-type(2) {
 }
 
 a {
-    color: #333333;
     text-decoration: none;
-    background-color: #ffffff;
     display: flex;
     aspect-ratio: 1/1;
     border-radius: 50%;
@@ -67,11 +80,14 @@ details {
     position: fixed;
     top: 1rem;
     left: 1rem;
-    background-color: #ffffff;
-    color: #333333;
     padding: 0.25rem 0.5rem;
     border-radius: 0.25rem;
     width: 40%;
+    height: 2rem;
+}
+
+details[open] {
+    height: 7rem;
 }
 
 details>summary {
@@ -121,10 +137,12 @@ details[open]::backdrop {
 
     details {
         width: 10rem;
+        
     }
 
     details[open] {
         width: min-content;
+        height: 4.5rem;
     }
 
     details form {

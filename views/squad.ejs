@@ -1,17 +1,19 @@
 <%- include('./partials/head') %>
   <link rel="stylesheet" href="/styles.css">
 
-  <a href="/">Back</a>
 
+<div id="nav_container">
   <details>
     <summary>Sorteer</summary>
     <a href="/squad/<%= squad.id %>/?sort=name">Naam (A - Z)</a>
     <a href="/squad/<%= squad.id %>/?sort=-name">Naam (Z - A)</a>
   </details>
+  <a id="nav_container_back" href="/">Back</a>
+</div>
 
   <main>
-    <section>
-      <h1 class="squadname">Squad <%= squad.name %>
+    <h1 class="squadname">Squad <%= squad.name %>
+      <section>
       </h1>
       <ul class="card-list">
 
