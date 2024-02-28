@@ -1,22 +1,41 @@
 <%- include('./partials/head') %>
-<link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/styles.css">
 
-<a href="/">Back</a>
+  <a href="/">Back</a>
 
-<details>
-  <summary>Sorteer</summary>
-  <a href="/squad/<%= squad.id %>/?sort=name">Naam (A - Z)</a>
-  <a href="/squad/<%= squad.id %>/?sort=-name">Naam (Z - A)</a>
-</details>
- 
-<main>
-  <ul>
-    <% persons.forEach(person => { %>
-      <li>
-        <p> <%= person.name + " " + person.surname + " " + squad.name %> </p>
-      </li>
-    <% }) %>
-  </ul>
-</main>
+  <details>
+    <summary>Sorteer</summary>
+    <a href="/squad/<%= squad.id %>/?sort=name">Naam (A - Z)</a>
+    <a href="/squad/<%= squad.id %>/?sort=-name">Naam (Z - A)</a>
+  </details>
 
-<%- include('./partials/foot') %>
+  <main>
+    <section>
+      <h1 class="squadname">Squad <%= squad.name %>
+      </h1>
+      <ul class="card-list">
+
+        <% persons.forEach(person=> { %>
+          <li class="card-item">
+            <a href="/person/<%= person.id %>">
+              <div class="img-box">
+                <img src="<%= person.avatar.includes('https') ? person.avatar : '/assets/person.png' %>" height="200px">
+              </div>
+              <hr>
+              <h2>
+                <%= person.name + " " + person.prefix + " " + person.surname %>
+              </h2>
+              <p>Nickname: <%= person.nickname !="" ? person.nickname : 'Ik heb geen...' %>
+              </p>
+              <div class="button-row">
+                <a class="button" href="<%= person.github_handle %>"><i class="fa-brands fa-github"></i>
+                  Github</a>
+              </div>
+            </a>
+          </li>
+          <% }) %>
+      </ul>
+    </section>
+  </main>
+
+  <%- include('./partials/foot') %>
