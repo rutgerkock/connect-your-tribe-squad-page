@@ -17,7 +17,14 @@ body {
     }
 
     .bubble {
-        background: hsl(335, 100%, 31%);
+        background: hsl(155, 68%, 13%);
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+
+    .bubble {
+        background: hsl(0, 100%, 43%);
     }
 }
 
@@ -133,7 +140,6 @@ details[open]::backdrop {
 .bubble {
     width: 40vmin;
     height: 40vmin;
-    background: hsl(212, 100%, 71%);
     border: (50vmin * .09) solid hsl(212, 100%, 81%);
     overflow: visible;
     border-radius: 48% 40% 62% 47% / 61% 49% 64% 43%;
