@@ -1,9 +1,28 @@
 <%- include('./partials/head') %>
 
-<a href="/">Back</a>
+    <a href="/">Back</a>
 
-<h2><%= person.name %></h2>
+    <h2>
+        <%= person.name %>
+    </h2>
 
-<p>Squad: <%= person.squad_id %>
+    <p>Squad: <%= person.squad_id %>
 
-<%- include('./partials/foot') %>
+            <h2>huidige berichten</h2>
+            <ul>
+                <% messages.forEach(message=> { %>
+                    <li>
+                        <%= message %>
+                    </li>
+                    <% }) %>
+            </ul>
+
+            <form method="POST" action="/">
+                <label> Berichtje
+                    <textarea required name="bericht"></textarea>
+                </label>
+                <button type="submit"> Verstuur bericht </button>
+            </form>
+
+
+            <%- include('./partials/foot') %>

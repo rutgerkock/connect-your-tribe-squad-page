@@ -16,7 +16,10 @@ body {
         color: #333333;
     }
 
-  }
+    .bubble {
+        background: hsl(335, 100%, 31%);
+    }
+}
 
 .button_container {
     display: grid;
