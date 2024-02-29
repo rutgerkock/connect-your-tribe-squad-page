@@ -30,18 +30,21 @@ body {
     .bubble3 {
         background: hsl(25, 100%, 65%);
         color: rgb(254, 237, 212);
+        border: 1.5vmin solid hsl(25, 100%, 75%);
     }
 
     .bubble:before,
     .bubble2:before,
     .bubble3:before {
         background: hsl(33, 100%, 51%);
+        border: 3vmin solid hsl(28, 100%, 61%);
     }
 
     .bubble::after,
     .bubble2::after,
     .bubble3::after {
         background: hsl(28, 100%, 50%);
+        border: 1.5vmin solid hsl(28, 100%, 49%);
     }
 
 }
@@ -61,18 +64,21 @@ body {
     .bubble3 {
         background: hsl(212, 100%, 71%);
         color: black;
+        border: 1.5vmin solid hsl(212, 100%, 81%);
     }
 
     .bubble:before,
     .bubble2:before,
     .bubble3:before {
         background: hsl(212, 100%, 51%);
+        border: 3vmin solid hsl(212, 100%, 61%);
     }
 
     .bubble::after,
     .bubble2::after,
     .bubble3::after {
         background: hsl(212, 100%, 31%);
+        border: 1.5vmin solid hsl(212, 100%, 41%);
     }
 }
 
@@ -191,7 +197,6 @@ details[open]::backdrop {
 .bubble {
     width: 40vmin;
     height: 40vmin;
-    border: (50vmin * .09) solid hsl(212, 100%, 81%);
     overflow: visible;
     border-radius: 48% 40% 62% 47% / 61% 49% 64% 43%;
     animation: rotate 35s infinite linear(-0.45 -22.52%, 1.06 37.03%);
@@ -213,7 +218,6 @@ details[open]::backdrop {
     margin: 2em;
     width: calc(100% - (40vmin * .3));
     height: calc(100% - (40vmin * .3));
-    border: (40vmin * .065) solid hsl(212, 100%, 61%);
     border-radius: 41% 40% 50% 55% / 49% 52% 51% 43%;
     z-index: -2;
     animation: rotateBefore 35s infinite linear;
@@ -233,7 +237,6 @@ details[open]::backdrop {
     position: absolute;
     width: calc(100% - (40vmin * .5));
     height: calc(100% - (40vmin * .5));
-    border: (50vmin * .05) solid hsl(212, 100%, 41%);
     border-radius: 42% 63% 51% 60% / 47% 62% 42% 52%;
     animation: rotateAfter 35s infinite linear;
     text-align: 10px 0px 0px 5px;
