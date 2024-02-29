@@ -54,10 +54,11 @@ app.get('/', function (request, response) {
 
 //Maak een POST route voor de index 
 app.post('/', function (request, response) {
+  const id = request.body.id
   //Voeg het nieuwe bericht toe an de messges array 
   messages.push(request.body.bericht)
   //Redirect hierna naar GET op / 
-  response.redirect(303, '/')
+  response.redirect(303, '/person/' + id)
 })
 
 
@@ -92,7 +93,7 @@ app.get('/squad/:id', async function (request, response) {
 });
 
 
-
+/*** Zoekfunctie ***/
 app.get('/search', function (request, response) {
   const searchData = request.query.search.toLowerCase().trim();
   fetchJson(apiUrl + '/person').then((apiData) => {

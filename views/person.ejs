@@ -19,6 +19,7 @@
 
             <form method="POST" action="/">
                 <label> Berichtje
+                    <input type="hidden" name="id" value="<%= person.id %>">
                     <textarea required name="bericht"></textarea>
                 </label>
                 <button type="submit"> Verstuur bericht </button>

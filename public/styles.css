@@ -135,7 +135,7 @@ details {
   width: 10rem;
 }
 
-details>summary {
+details > summary {
   cursor: pointer;
 }
 
@@ -160,12 +160,12 @@ details a {
   display: flex;
   justify-content: center;
   flex-direction: column;
+  align-items: center;
 }
 
 li {
   width: 40vmin;
   height: 40vmin;
-
   border: (50vmin * 0.09) solid hsl(212, 100%, 81%);
   overflow: visible;
   border-radius: 48% 40% 62% 47%;
@@ -178,13 +178,69 @@ li {
 li:before {
   content: "";
   position: absolute;
-  top: 20vmin * 0.1;
-  left: 20vmin * 0.1;
+  top: 40vmin * 0.1;
+  left: 40vmin * 0.1;
   margin: 2em;
   width: calc(100% - (40vmin * 0.3));
   height: calc(100% - (40vmin * 0.3));
-
   border: (40vmin * 0.065) solid hsl(212, 100%, 61%);
   border-radius: 41% 40% 50% 55%;
   z-index: -2;
 }
+
+.img-box {
+  display: flex;
+  justify-content: center;
+}
+
+@media only screen and (max-width: 550px) {
+  .card-list {
+    list-style-type: none;
+    line-height: 2;
+    z-index: 1;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    
+  }
+
+  .card-item {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    scale: 1;
+    
+  }
+
+ ul  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  li {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .img-box {
+    scale: 0.5;
+  }
+
+  p {
+    font-size: 1em;
+    text-align: center;
+  }
+
+  h2 {
+    font-size: 1.1em;
+    text-align: center;
+  }
+
+}
+
