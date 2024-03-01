@@ -4,19 +4,18 @@
 <a id="nav_container_back" href="/">Back</a>
 
 <main>
+  <br>
   <p> <%= "Zoekresulaten voor \'" + search + "\':" %> </p>
-  <ul>
-      <% persons.forEach(person => { %>
-        <li>
-          <p>
-            <%= person.name + " " + person.surname %>
-          </p>
-          <p>
-            <%= person.github_handle %>
-          </p>
-          <br>
-          <br>
-        </li>
+  <ul class="card-list">
+
+    <% persons.forEach(person=> { %>
+      <li class="card-item">
+        <a href="/person/<%= person.id %>">
+          <h2>
+            <%= person.name + " " + person.prefix + " " + person.surname %>
+          </h2>
+        </a>
+      </li>
       <% }) %>
-    </ul>
+  </ul>
   </main>
